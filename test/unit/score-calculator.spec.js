@@ -15,4 +15,11 @@ describe('Score calculator', () => {
 
 		expect(scoreCalculator(gameWithSpare)).to.eql(29);
 	});
+
+	it('should sum up all frames with strikes', () => {
+		let rolls = new Array(12);
+		let gameWithStrikes = rolls.fill(10);
+
+		expect(scoreCalculator(gameWithStrikes)).to.eql(300);
+	});
 });
