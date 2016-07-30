@@ -7,15 +7,15 @@ export const getValueOfRolls = (game) => {
 		let rolls = getRolls();
 
 		for(let i = 0; i < rolls.length; i++){
-			if(isStrike(rolls[i])){
+			if(isRoll(rolls[i], strike)){
 				rolls.splice(i, 1, 10);
 			}
-			else if(isSpare(rolls[i])){
+			else if(isRoll(rolls[i], spare)){
 				let previousRoll = rolls[i-1];
 				let rollValue = 10 - previousRoll;
 				rolls.splice(i, 1, rollValue);
 			}
-			else if(isMiss(rolls[i])){
+			else if(isRoll(rolls[i], miss)){
 				rolls.splice(i, 1, 0);
 			}
 		}
@@ -23,16 +23,8 @@ export const getValueOfRolls = (game) => {
 		return rolls;
 	}
 
-	const isStrike = (roll) => {
-		return roll.includes(strike);
-	}
-
-	const isSpare = (roll) => {
-		return roll.includes(spare);
-	}
-
-	const isMiss = (roll) => {
-		return roll.includes(miss);
+	const isRoll = (roll, character) => {
+		return roll.includes(character);
 	}
 
 	const getRolls = () => {
