@@ -11,4 +11,4 @@ A more functional approach was taken rather than a OO approach as the complexity
 
 Built using ES2015/ES6 features such as arrow functions.
 
-Both scoreCalculator and getValueOfRolls functions are [idempotent](https://github.com/hemanth/functional-programming-jargon#idempotent). However, the functions within those have [side effects](https://github.com/hemanth/functional-programming-jargon#side-effects). It would be nice to remove those to make them easily available in the future without being concerned about the implications.
+Both `scoreCalculator` and `getValueOfRolls` functions are [idempotent](https://github.com/hemanth/functional-programming-jargon#idempotent). However, the functions within those have [side effects](https://github.com/hemanth/functional-programming-jargon#side-effects). It would be nice to remove those to make them easily available in the future without being concerned about the implications.
