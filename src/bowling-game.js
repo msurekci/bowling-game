@@ -1,7 +1,7 @@
-import { scoreCalculator } from './score-calculator';
-import { getValueOfRolls } from './frames';
+import score from './score-calculator';
+import frames from './frames';
 
 export const bowlingGame = (game) => {
-	let rolls = getValueOfRolls(game);
-	return scoreCalculator(rolls);
+	let rolls = frames.getValueOfRolls(game);
+	return score.calculate(rolls);
 };
